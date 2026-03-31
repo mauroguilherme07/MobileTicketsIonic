@@ -1,0 +1,7 @@
+{
+  "name": "senhaApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

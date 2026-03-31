@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pacientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <p *ngIf="usuarios.length === 0">
+    Carregando usuários...
+  </p>
+
+  <ion-list>
+    <ion-item *ngFor="let user of usuarios">
+      <ion-label>
+        <h2 appDestaque>{{ user.name | nome }}</h2>
+        <p>{{ user.email | lowercase }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
