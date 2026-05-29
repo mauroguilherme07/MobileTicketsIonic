@@ -6,20 +6,128 @@
 
 <ion-content class="ion-padding">
 
-  <ion-button expand="block" (click)="gerarPrior()">
-    Gerar Prioritária
-  </ion-button>
+  <ion-button expand="block" color="danger" (click)="gerarPrior()">
+  🔴 Gerar Senha Prioritária
+</ion-button>
 
-  <ion-button expand="block" (click)="gerarGeral()">
-    Gerar Geral
-  </ion-button>
+<ion-button expand="block" color="primary" (click)="gerarGeral()">
+  🔵 Gerar Senha Geral
+</ion-button>
 
-  <ion-button expand="block" (click)="gerarExame()">
-    Gerar Exame
-  </ion-button>
+<ion-button expand="block" color="success" (click)="gerarExame()">
+  🟢 Gerar Senha Exame
+</ion-button>
 
-  <ion-button expand="block" color="danger" (click)="resetar()">
-    Resetar Senhas
-  </ion-button>
+
+<ion-button expand="block" color="dark" (click)="chamarProximaSenha()">
+  📢 Chamar Próxima Senha
+</ion-button>
+  
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title>
+        Senha Atual
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <h1
+  style="
+    font-size: 42px;
+    text-align: center;
+    font-weight: bold;
+    color: #3880ff;
+  "
+>
+  {{ senhas.senhaAtual }}
+</h1>
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title>
+        Últimas Chamadas
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-list>
+
+        <ion-item *ngFor="let chamada of senhas.ultimasChamadas">
+
+          <ion-label>
+
+  <ion-badge
+    *ngIf="chamada.tipo === 'SP'"
+    color="danger"
+  >
+    {{ chamada.numero }}
+  </ion-badge>
+
+  <ion-badge
+    *ngIf="chamada.tipo === 'SG'"
+    color="primary"
+  >
+    {{ chamada.numero }}
+  </ion-badge>
+
+  <ion-badge
+    *ngIf="chamada.tipo === 'SE'"
+    color="success"
+  >
+    {{ chamada.numero }} - Guichê {{ chamada.guiche }}
+
+<p>
+  {{ chamada.dataAtendimento | date:'HH:mm:ss' }}
+</p>
+  </ion-badge>
+
+</ion-label>
+
+        </ion-item>
+
+      </ion-list>
+
+    </ion-card-content>
+
+  </ion-card>
+
+<ion-card>
+
+  <ion-card-header>
+    <ion-card-title>
+      Filas
+    </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <p>
+      🔴 Prioritária: {{ senhas.filaSP.length }}
+    </p>
+
+    <p>
+      🔵 Geral: {{ senhas.filaSG.length }}
+    </p>
+
+    <p>
+      🟢 Exame: {{ senhas.filaSE.length }}
+    </p>
+
+  </ion-card-content>
+
+</ion-card>
+
+
+  <ion-button expand="block" color="warning" (click)="resetar()">
+  ♻️ Resetar Sistema
+</ion-button>
 
 </ion-content>

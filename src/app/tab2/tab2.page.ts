@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
+import { Senha } from 'src/app/models/senha';
 
 @Component({
   selector: 'app-tab2',

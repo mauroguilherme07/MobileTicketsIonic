@@ -1,37 +1,86 @@
 # MobileTicketsIonic
 
-Projeto Mobile desenvolvido em **Ionic + Angular**, com template de **Tabs** e integração **Capacitor**.
+Sistema de gerenciamento de filas desenvolvido em **Ionic + Angular** utilizando template **Tabs** e integração com **Capacitor**.
 
 ## 📌 Objetivo
 
-Praticar os conteúdos abordados em sala de aula, aplicando conceitos de Ionic, Angular, rotas, componentes, diretivas e pipes, além de fortalecer o portfólio do aluno.
+Desenvolver uma aplicação mobile para controle de atendimento e gerenciamento de senhas, aplicando os conceitos estudados na disciplina de Desenvolvimento Mobile.
+
+O sistema permite emissão de senhas, organização de filas prioritárias, painel de chamadas e relatórios de atendimento em tempo real.
+
+---
 
 ## ⚙️ Funcionalidades
 
-- Login de usuário
-- Visualização de tickets disponíveis
-- Detalhes do ticket selecionado
-- Navegação entre abas (Tabs)
-- Uso de Pipes e Diretivas personalizadas
+- Emissão de senhas prioritárias (SP)
+- Emissão de senhas gerais (SG)
+- Emissão de senhas de exame (SE)
+- Geração automática de senhas no padrão:
+  ```text
+  YYMMDD-PPSQ
 
-## 🖼️ Screenshots
+- Controle de filas separadas
+- Chamada de próxima senha
+- Painel com senha atual
+- Histórico das últimas chamadas
+- Exibição de guichê
+- Exibição de horário do atendimento
+- Relatórios de senhas emitidas
+- Relatórios de senhas atendidas
+- Histórico completo de atendimentos
 
-![Tela de Login](./screenshots/tela1.png)  
-![Tela de Tickets](./screenshots/tela2.png)  
-![Detalhes do Ticket](./screenshots/tela3.png)  
+---
 
-> ⚠️ Coloque suas próprias capturas de tela na pasta `screenshots`.
+🖼️ Screenshots
 
-## 🛠️ Tecnologias Utilizadas
+Tela Principal
 
-- Ionic  
-- Angular  
-- Capacitor  
-- HTML, CSS, TypeScript  
+"Tela Principal" (./screenshots/tela1.png)
 
-## 💻 Como Rodar o Projeto
+Painel de Chamadas
 
-1. Instale as dependências:
+"Painel" (./screenshots/tela2.png)
 
-```bash
+Relatórios
+
+"Relatórios" (./screenshots/tela3.png)
+
+---
+
+🛠️ Tecnologias Utilizadas
+
+- Ionic
+- Angular
+- TypeScript
+- Capacitor
+- HTML5
+- SCSS
+
+---
+
+💻 Como Rodar o Projeto
+
+Instalar dependências
+
 npm install
+
+Executar o projeto
+
+ionic serve
+
+---
+
+📂 Estrutura do Projeto
+
+src/app
+├── models
+├── service
+├── tab1
+├── tab2
+├── tab3
+
+---
+
+👨‍💻 Desenvolvido para
+
+Disciplina de Desenvolvimento Mobile - ADS

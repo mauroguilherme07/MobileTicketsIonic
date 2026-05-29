@@ -23,8 +23,11 @@ export class Tab1Page {
     this.senhas.gerarExame();
   }
 
+  chamarProximaSenha() {
+  this.senhas.chamarProximaSenha();
+  }
+
   resetar() {
     this.senhas.resetar();
   }
-
 }

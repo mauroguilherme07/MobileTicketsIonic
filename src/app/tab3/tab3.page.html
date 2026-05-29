@@ -1,18 +1,86 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Resumo</ion-title>
+    <ion-title>
+      Relatórios
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content>
 
-  <h1 style="font-size: 40px; text-align: center;">
-    {{ senhas.ultimaSenha }}
-  </h1>
+  <ion-card>
 
-  <h2>Total: {{ senhas.total }}</h2>
-  <h3>Prior: {{ senhas.prior }}</h3>
-  <h3>Geral: {{ senhas.geral }}</h3>
-  <h3>Exame: {{ senhas.exame }}</h3>
+    <ion-card-header>
+      <ion-card-title>
+        Relatório Geral
+      </ion-card-title>
+    </ion-card-header>
 
+    <ion-card-content>
+
+      <p>
+        Total de Senhas: {{ senhas.total }}
+      </p>
+      
+      <p>
+        Total Atendidas: {{ senhas.atendidas }}
+      </p>
+
+      <p>
+        🔴 Prioritárias: {{ senhas.prior }}
+      </p>
+
+      <p>
+        🔵 Gerais: {{ senhas.geral }}
+      </p>
+
+      <p>
+        🟢 Exames: {{ senhas.exame }}
+      </p>
+
+    </ion-card-content>
+
+  </ion-card>
+<ion-card>
+
+  <ion-card-header>
+    <ion-card-title>
+      Histórico de Atendimentos
+    </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <ion-list>
+
+      <ion-item *ngFor="let atendimento of senhas.historicoAtendimentos">
+
+        <ion-label>
+
+          <h2>
+            {{ atendimento.numero }}
+          </h2>
+
+          <p>
+            Tipo: {{ atendimento.tipo }}
+          </p>
+
+          <p>
+            Guichê: {{ atendimento.guiche }}
+          </p>
+
+          <p>
+            Horário:
+            {{ atendimento.dataAtendimento | date:'HH:mm:ss' }}
+          </p>
+
+        </ion-label>
+
+      </ion-item>
+
+    </ion-list>
+
+  </ion-card-content>
+
+</ion-card>
 </ion-content>
